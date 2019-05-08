@@ -1,0 +1,35 @@
+body {
+    background: #4D0606;
+}
+
+/* Post */
+.review {
+    width: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Time field */
+.text-muted {
+    font-size: 15px;
+
+}
+
+/* Button */
+.btn {
+    background: #111;
+    color: #fff;
+}
+
+#send-btn {
+    margin-top: 15px;
+}
+
+#send-btn:hover {
+    background: #4D0606;
+    color: #fff;
+}
