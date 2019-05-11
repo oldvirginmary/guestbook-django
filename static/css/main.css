@@ -1,5 +1,5 @@
 body {
-    background: #4D0606;
+    background: url('../background/figures.png');
 }
 
 /* Post */
@@ -16,12 +16,11 @@ body {
 /* Time field */
 .text-muted {
     font-size: 15px;
-
 }
 
 /* Button */
 .btn {
-    background: #111;
+    background: #222;
     color: #fff;
 }
 
@@ -30,6 +29,5 @@ body {
 }
 
 #send-btn:hover {
-    background: #4D0606;
-    color: #fff;
+    background: #ffb7c5;
 }
