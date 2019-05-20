@@ -23,28 +23,34 @@
         // If a positive response came
         request.done(function(data, textStatus, jqXHR) {
             // Display blog using response data
+            data = JSON.parse(data)
             var form = $('#form');
 
             for (var i = 0; i < data.length; i++) {
-                var review = $('<div>').addClass('review col-sm-5 col-md-3 card card-body');
-                var title = $('<h3>').addClass('title card-title').text(data[i].title);
-                var content = $('<p>').addClass('content card-text').text(data[i].content);
-                var time = $('<p>').addClass('time card-text');
-                time.append($('<span>').addClass('text-muted').text(niceDateTime(data[i].time)));
+                var post = data[i].fields;
+                var review = $('<div>').addClass(
+                    'review col-sm-5 col-md-3 card card-body');
+                // Fields
+                var title = $('<h3>').addClass(
+                    'title card-title').text(post.title);
+                var content = $('<p>').addClass(
+                    'content card-text').text(post.content);
+                var time = $('<p>').addClass(
+                    'time card-text');
+                time.append($('<span>').addClass('text-muted').text(niceDateTime(post.time)));
 
                 review.append(title);
                 review.append(content);
                 review.append(time);
                 results.append(review);
-
-                console.log(data[i].time);
             }
 
             // Add input form as a reviw block using Bootstrap 4
             // Block
             var review = $('<div>').attr('id', 'form-as-review');
             results.append(review);
-            $('#form-as-review').addClass('review col-sm-5 col-md-3 card card-body');
+            $('#form-as-review').addClass(
+                'review col-sm-5 col-md-3 card card-body');
             // Title
             var inputTitle = $('<input>').attr('id', 'input-title');
             form.append(inputTitle);
